@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Завдання №13 - "Події JS, клік"</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="head">
+                міні-проєкт "Гра 1000 за 11"
+            </div>
+            <section class="task-box">
+                <div class="buttons">
+                    <button class="btn btn-green">Додати поле</button>
+                    <button class="btn btn-blue disabled">Почати гру</button>
+                    <button class="btn btn-orange disabled">Наново</button>
+                    <button class="btn btn-white">Правила</button>
+                </div>
+                <div class="messages">
+                    <div class="text-msg">Тисни зелену кнопку, щоб додати ігрове поле</div>
+                    <div class="result">
+                        <div class="click-text">0</div>
+                        <div class="score-text">0</div>
+                    </div>
+                </div>
+                <div class="grid"></div>
+                <div class="rules hide">
+                    <div class="rules-body">
+                        <div class="rules-title">Правила гри "1000 за 11"</div>
+                        <ol>
+                            <li>Гравець може натискати поля від 1 до 100 включно;</li>
+                            <li>Кожен клік на число додає до загальної суми значення цього поля, а також збільшує кількість порахованих кліків на 1;</li>
+                            <li>Гравець повинен набрати рівно 1000 за 11 кліків, щоб виграти гру;</li>
+                            <li>Гравець може натискати поля в будь-якому порядку.</li>
+                        </ol>
+                        <button class="btn btn-red">Закрити</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,262 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+button {
+  appearance: none;
+  font: inherit;
+  background-color: none;
+  border: none;
+  outline: 0;
+}
+
+.head {
+  background-color: royalblue;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.task-box {
+  max-width: 580px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.btn {
+  padding: 6px 12px;
+  display: inline-block;
+  font-size: 18px;
+  background-color: royalblue;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: inset 0 0 100px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-green {
+  background-color: rgb(4, 169, 4);
+}
+
+.btn-orange {
+  background-color: orangered;
+  color: #fff;
+}
+
+.btn-red {
+  background-color: red;
+  color: #fff;
+}
+
+.btn-white {
+  background-color: #fff;
+  outline: 3px solid royalblue;
+  outline-offset: -3px;
+  color: royalblue;
+}
+
+.btn.disabled {
+  background-color: gray;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.grid {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+
+.grid.block,
+.grid.finish {
+  pointer-events: none;
+  cursor: not-allowed;
+  padding: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.grid.block::before,
+.grid.finish::before {
+  content: 'Заборонено';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: red;
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(27, 3, 130, 0.85);
+  cursor: not-allowed;
+  border-radius: 10px;
+}
+
+.grid.finish::before {
+  content: 'Гру завершено';
+}
+
+.cell {
+  min-width: 50px;
+  height: 50px;
+  border: 1px solid rgb(255, 162, 162);
+  transition: 0.3s ease-in-out;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+}
+
+.cell.clicked {
+  border-color: transparent;
+}
+
+.messages {
+  margin-bottom: 10px;
+}
+
+.text-msg {
+  border-radius: 10px;
+  border: 3px solid rgba(0, 55, 255, 0.5);
+  padding: 10px;
+  line-height: 1.5;
+  font-size: 18px;
+  color: red;
+  text-align: center;
+}
+
+.result {
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.click-text,
+.score-text {
+  padding: 6px;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+}
+
+.click-text {
+  min-width: 60px;
+  background-color: #7f9bff;
+}
+
+.score-text {
+  min-width: 90px;
+  background-color: #6080f4;
+}
+
+.rules {
+  max-width: 580px;
+  border-radius: 20px;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 100;
+  transition: 0.3s ease-in-out;
+}
+
+.rules-title {
+  font-size: 30px;
+  color: royalblue;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.rules-body {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.rules-body li {
+  margin-bottom: 10px;
+}
+
+.rules-body .btn {
+  display: block;
+  margin: 0 auto;
+}
+
+.rules.hide {
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.wrapper {
+  overflow-x: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+body.blocked {
+  overflow-y: hidden;
+}
+
+.blocked .wrapper::before {
+  content: '';
+  z-index: 10;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(27, 3, 130, 0.85);
+}
